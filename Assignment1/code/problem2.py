@@ -7,8 +7,11 @@ from scipy import stats, optimize
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
+from pathlib import Path
 
-df = pd.read_csv("Assignments/Assignment1/problem2.csv")
+BASE_DIR = Path(__file__).resolve().parent.parent
+
+df = pd.read_csv(BASE_DIR / "problem2.csv")
 x, y, n = df["x"].values, df["y"].values, len(df)
 
 # Scatter plot

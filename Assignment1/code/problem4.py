@@ -7,8 +7,11 @@ from scipy import stats
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
+from pathlib import Path
 
-df = pd.read_csv("Assignments/Assignment1/problem4.csv")
+BASE_DIR = Path(__file__).resolve().parent.parent
+
+df = pd.read_csv(BASE_DIR / "problem4.csv")
 x1, x2, n = df["x1"].values, df["x2"].values, len(df)
 
 # Sample means and covariance matrix

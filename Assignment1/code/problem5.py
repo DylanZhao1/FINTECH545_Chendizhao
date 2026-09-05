@@ -6,11 +6,14 @@ import pandas as pd
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
+from pathlib import Path
 from statsmodels.graphics.tsaplots import plot_acf, plot_pacf
 from statsmodels.tsa.arima.model import ARIMA
 from statsmodels.tsa.stattools import acf, pacf
 
-df = pd.read_csv("Assignments/Assignment1/problem5.csv")
+BASE_DIR = Path(__file__).resolve().parent.parent
+
+df = pd.read_csv(BASE_DIR / "problem5.csv")
 x, n, nlags = df["x"].values, len(df), 20
 
 # Plot the raw series, its ACF, and its PACF

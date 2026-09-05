@@ -4,9 +4,11 @@ from scipy import stats
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
+from pathlib import Path
+BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Load data
-df = pd.read_csv("Assignments/Assignment1/code/problem1.csv")
+df = pd.read_csv(BASE_DIR / "problem1.csv")
 x = df["x"].values
 n = len(x)
 

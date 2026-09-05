@@ -7,8 +7,11 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import itertools
+from pathlib import Path
 
-df = pd.read_csv("Assignments/Assignment1/problem3.csv")
+BASE_DIR = Path(__file__).resolve().parent.parent
+
+df = pd.read_csv(BASE_DIR / "problem3.csv")
 cols = list(df.columns)
 pairs = list(itertools.combinations(cols, 2))
 
